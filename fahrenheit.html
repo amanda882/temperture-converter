@@ -40,11 +40,11 @@
                   console.log('calculateBtn was clicked');
                   let fInput = document.getElementById('Celsius').value;
                   fInput = Number(fInput);
-                  if (fInput == '' || isNaN(cInput)) {
+                  if (fInput == '' || isNaN(fInput)) {
                       fTemperature.innerHTML = 'Error!!! Please input a number.';
                   }
                   else {
-                      let fahrenheit = (cInput +32 ) * 9/5;
+                      let fahrenheit = (fInput * 9/5 ) +32;
                       fahrenheit = fahrenheit.toFixed(2);
                       console.log(typeof fahrenheit);
                       fTemperature.innerHTML = `Results: ${fahrenheit}°F`;
