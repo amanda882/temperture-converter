@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit Converter</title>
+</head>
+<body>
+        <!--This is the header section-->
+        
+        <div class="topnav">
+            <a class="Home" href="home-page.html">Home</a>
+            <a href="fahrenheit.html">Fehrenheit</a>
+            <a href="celsius.html">Celcius</a>
+            <a href="about-us.html">About Us</a>
+          </div>
+
+         
+          <h1>Enter Celsius to Calculate Fahrenheit:</h1>
+
+          <form id="celciusSection">
+              <label for="Celsius">Enter Celsius temperature</label>
+              <input id="Celsius" type="text">
+              <br>
+              <br>
+              <button id="calculateBtn" type="button">Calculate</button>
+          </form>
+          <br>
+          <h2><output></output></h2>
+          <script>
+              let calcbtn = document.getElementById('calculateBtn');
+              calcbtn.addEventListener('click', calculateBtn);
+      
+              function calculateBtn() {
+                  let fTemperature = document.querySelector('output');
+
+                /*Line 38 Error"cannot read properties of  numm (reading
+                'value') */
+                  console.log('calculateBtn was clicked');
+                  let fInput = document.getElementById('Celsius').value;
+                  fInput = Number(fInput);
+                  if (fInput == '' || isNaN(cInput)) {
+                      fTemperature.innerHTML = 'Error!!! Please input a number.';
+                  }
+                  else {
+                      let fahrenheit = (cInput +32 ) * 9/5;
+                      fahrenheit = fahrenheit.toFixed(2);
+                      console.log(typeof fahrenheit);
+                      fTemperature.innerHTML = `Results: ${fahrenheit}°F`;
+                  }
+              }
+          </script>
+
+
+
+    
+    
+         
+       
+    
+</body>
+</html>

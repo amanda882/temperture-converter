@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celcius Converter</title>
+</head>
+
+<body>
+    <!--This is the header section-->
+
+    <div class="topnav">
+        <a class="Home" href="home-page.html">Home</a>
+        <a href="fahrenheit.html">Fehrenheit</a>
+        <a href="celsius.html">Celcius</a>
+        <a href="about-us.html">About Us</a>
+    </div>
+
+    <h1>Enter Fahrenheit to Calculate Celsius:</h1>
+
+    <form id="celciusSection">
+        <label for="Fahrenheit">Enter Fahrenheit temperature</label>
+        <input id="Fahrenheit" type="text">
+        <br>
+        <br>
+        <button id="calculateButton" type="button">Calculate</button>
+    </form>
+    <br>
+    <h2><output></output></h2>
+    <script>
+        let calcbtn = document.getElementById('calculateButton');
+        calcbtn.addEventListener('click', calculateButton);
+
+        function calculateButton() {
+            let cTemperature = document.querySelector('output');
+            console.log('calculateButton was clicked');
+            let cInput = document.getElementById('Fahrenheit').value;
+            cInput = Number(cInput);
+            if (cInput == '' || isNaN(cInput)) {
+                cTemperature.innerHTML = 'Error!!! Please input a number.';
+            }
+            else {
+                let celsius = (cInput - 32) * 5 / 9;
+                celsius = celsius.toFixed(2);
+                console.log(typeof celsius);
+                cTemperature.innerHTML = `Results: ${celsius}°C`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
